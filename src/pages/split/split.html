@@ -1,0 +1,21 @@
+<ion-split-pane when="(min-width: 500px)">
+
+  <ion-menu>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>SplitPage</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content padding>
+      <ion-list>
+        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          {{p.title}}
+        </button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main></ion-nav>
+
+</ion-split-pane>
